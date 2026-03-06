@@ -1,0 +1,15 @@
+{
+  "name": "daily-news-aggregator",
+  "version": "1.0.0",
+  "description": "每日新闻聚合 - 根据关注主题自动抓取资讯",
+  "main": "src/fetch-news.js",
+  "scripts": {
+    "fetch": "node src/fetch-news.js",
+    "build": "node src/generate-html.js",
+    "notify": "node src/notify-dingtalk.js",
+    "dev": "npm run fetch && npm run build"
+  },
+  "keywords": ["news", "aggregator", "automation", "dingtalk"],
+  "author": "大富",
+  "license": "MIT"
+}

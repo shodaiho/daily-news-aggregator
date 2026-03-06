@@ -1,0 +1,79 @@
+name: Daily News Aggregation
+
+on:
+  schedule:
+    # UTC 22:30 = 北京时间 06:30
+    - cron: '30 22 * * *'
+  workflow_dispatch:
+
+env:
+  DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
+  DINGTALK_SECRET: ${{ secrets.DINGTALK_SECRET }}
+
+jobs:
+  # 任务1: 抓取新闻并生成网页
+  fetch-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Create temp directory
+        run: mkdir -p temp
+      
+      # 1. 抓取新闻 (06:30-07:00)
+      - name: Fetch News
+        run: node src/fetch-news.js
+      
+      # 2. 生成网页 (07:00-07:15)
+      - name: Generate HTML
+        run: node src/generate-html.js
+      
+      # 3. 部署到GitHub Pages (07:15)
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          user_name: 'github-actions'
+          user_email: 'github-actions@github.com'
+      
+      - name: Save build timestamp
+        run: echo "BUILD_TIME=$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> $GITHUB_ENV
+
+  # 任务2: 等待到8点后推送
+  notify:
+    needs: fetch-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      # 4. 等待到北京时间8:00 (UTC 00:00)
+      - name: Wait until 8:00 AM Beijing Time
+        run: |
+          echo "等待到北京时间8:00..."
+          target_hour=0  # UTC 0点 = 北京8点
+          current_hour=$(date -u +%H)
+          
+          if [ "$current_hour" -lt "$target_hour" ]; then
+            wait_seconds=$(( (target_hour - current_hour) * 3600 ))
+            echo "需要等待 $wait_seconds 秒"
+            sleep $wait_seconds
+          else
+            echo "当前已过8点，直接推送"
+          fi
+      
+      # 5. 钉钉推送 (08:00)
+      - name: Notify DingTalk
+        run: node src/notify-dingtalk.js

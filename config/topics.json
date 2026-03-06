@@ -1,0 +1,53 @@
+{
+  "topics": [
+    {
+      "id": "ai",
+      "name": "人工智能",
+      "icon": "🤖",
+      "keywords": ["人工智能", "AI", "大模型", "ChatGPT", "教育科技", "智能教育"],
+      "sources": ["机器之心", "量子位", "36氪", "虎嗅"],
+      "color": "#3b82f6"
+    },
+    {
+      "id": "mid-east",
+      "name": "中东局势",
+      "icon": "🌍",
+      "keywords": ["伊朗", "以色列", "中东", "美以冲突", "哈梅内伊", "国际局势"],
+      "sources": ["新华网", "央视新闻", "环球网"],
+      "color": "#ef4444"
+    },
+    {
+      "id": "edu-policy",
+      "name": "教育政策",
+      "icon": "📋",
+      "keywords": ["教育政策", "双减", "新课标", "儿童阅读", "语文教育", "教育部", "教育改革"],
+      "sources": ["教育部官网", "中国教育报", "澎湃新闻教育"],
+      "color": "#10b981"
+    },
+    {
+      "id": "reading-industry",
+      "name": "阅读行业",
+      "icon": "📚",
+      "keywords": ["儿童阅读", "绘本", "童书出版", "阅读推广", "亲子阅读", "整本书阅读", "书香中国"],
+      "sources": ["出版商务周报", "中国出版传媒商报", "阅读公众号"],
+      "color": "#f59e0b"
+    }
+  ],
+  "settings": {
+    "siteName": "每日资讯聚合",
+    "siteDescription": "为您的关注主题提供每日精选资讯",
+    "maxItemsPerTopic": 10,
+    "fetchTime": "06:30",
+    "pushTime": "08:00",
+    "timezone": "Asia/Shanghai",
+    "retentionDays": 30
+  },
+  "notification": {
+    "type": "dingtalk",
+    "dingtalk": {
+      "webhook": "${DINGTALK_WEBHOOK}",
+      "secret": "${DINGTALK_SECRET}",
+      "messageType": "markdown"
+    }
+  }
+}
