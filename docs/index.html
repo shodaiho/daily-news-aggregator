@@ -92,6 +92,22 @@
             line-height: 1.5;
         }
         
+        .news-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .news-title a:hover {
+            color: #667eea;
+        }
+        
+        .news-summary {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
         .news-meta {
             display: flex;
             justify-content: space-between;
@@ -103,7 +119,6 @@
             text-align: center;
             padding: 40px 20px;
             color: white;
-            opacity: 0.8;
         }
         
         .update-time {
@@ -112,6 +127,12 @@
             border-radius: 20px;
             display: inline-block;
             margin-top: 10px;
+        }
+        
+        .no-news {
+            padding: 20px;
+            text-align: center;
+            color: #999;
         }
     </style>
 </head>
@@ -132,48 +153,41 @@
                 <div class="news-list">
                     
                     <div class="news-item">
-                        <h3 class="news-title">人工智能 今日热点 1</h3>
+                        <h3 class="news-title">
+                            <a href="https://www.163.com/dy/article/KNAGEP5505198CJN.html" target="_blank">OpenAI发布GPT-5.4：迈向自主智能体的重要一步</a>
+                        </h3>
+                        <p class="news-summary">OpenAI正式推出GPT-5.4，引入极限推理模式和永久记忆功能，上下文窗口高达100-200万tokens，为下一代AI智能体开发奠定基础。</p>
                         <div class="news-meta">
-                            <span>机器之心</span>
-                            <span>2小时前</span>
+                            <span>📰 财联社/网易</span>
+                            <span>🕐 2026-03-06</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">人工智能 今日热点 2</h3>
+                        <h3 class="news-title">
+                            <a href="https://finance.ifeng.com/c/8rDEspE7J4j" target="_blank">OpenAI发布GPT-5.3 Instant模型</a>
+                        </h3>
+                        <p class="news-summary">OpenAI正式发布GPT-5.3 Instant模型及其编程版本，进一步提升推理效率和代码生成能力。</p>
                         <div class="news-meta">
-                            <span>量子位</span>
-                            <span>2小时前</span>
+                            <span>📰 证券时报/凤凰网</span>
+                            <span>🕐 2026-03-04</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">人工智能 今日热点 3</h3>
+                        <h3 class="news-title">
+                            <a href="https://blog.csdn.net/guorui_java/article/details/149441181" target="_blank">AI进入自动驾驶时代：OpenAI发布革命性ChatGPT Agent</a>
+                        </h3>
+                        <p class="news-summary">OpenAI发布ChatGPT Agent，实现AI自主决策和执行复杂任务，标志着AI智能体进入实用化阶段。</p>
                         <div class="news-meta">
-                            <span>36氪</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">人工智能 今日热点 4</h3>
-                        <div class="news-meta">
-                            <span>虎嗅</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">人工智能 今日热点 5</h3>
-                        <div class="news-meta">
-                            <span>机器之心</span>
-                            <span>2小时前</span>
+                            <span>📰 CSDN博客</span>
+                            <span>🕐 2026-03-02</span>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            
+              
             <div class="topic-card">
                 <div class="topic-header" style="background: #ef444415; border-left: 4px solid #ef4444">
                     <span class="topic-icon">🌍</span>
@@ -182,48 +196,41 @@
                 <div class="news-list">
                     
                     <div class="news-item">
-                        <h3 class="news-title">中东局势 今日热点 1</h3>
+                        <h3 class="news-title">
+                            <a href="https://www.163.com/dy/article/KNB5OA4K05504DOQ.html" target="_blank">美以伊战事进入第七天，伊朗导弹袭击以色列空军基地</a>
+                        </h3>
+                        <p class="news-summary">3月6日冲突进入第7天，伊朗发射携带1吨重弹头的超重型导弹打击特拉维夫市中心、本-古里安机场及空军基地。</p>
                         <div class="news-meta">
-                            <span>新华网</span>
-                            <span>2小时前</span>
+                            <span>📰 环球时报/网易</span>
+                            <span>🕐 2026-03-06</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">中东局势 今日热点 2</h3>
+                        <h3 class="news-title">
+                            <a href="https://www.163.com/dy/article/KNB5OA4K05504DOQ.html" target="_blank">伊朗称击中波斯湾美国油轮，美军击沉30余艘伊朗舰艇</a>
+                        </h3>
+                        <p class="news-summary">伊朗宣布击中波斯湾北部美国油轮，美国中央司令部称已击沉逾30艘伊朗舰艇并击中一艘无人机航母。</p>
                         <div class="news-meta">
-                            <span>央视新闻</span>
-                            <span>2小时前</span>
+                            <span>📰 法新社/网易</span>
+                            <span>🕐 2026-03-06</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">中东局势 今日热点 3</h3>
+                        <h3 class="news-title">
+                            <a href="https://www.163.com/dy/article/KNB5OA4K05504DOQ.html" target="_blank">2万名海员和1.5万名邮轮乘客滞留波斯湾</a>
+                        </h3>
+                        <p class="news-summary">联合国航运监管机构称，受战争影响，大量海员和游客滞留波斯湾区域，人道主义危机加剧。</p>
                         <div class="news-meta">
-                            <span>环球网</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">中东局势 今日热点 4</h3>
-                        <div class="news-meta">
-                            <span>新华网</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">中东局势 今日热点 5</h3>
-                        <div class="news-meta">
-                            <span>央视新闻</span>
-                            <span>2小时前</span>
+                            <span>📰 法新社</span>
+                            <span>🕐 2026-03-06</span>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            
+              
             <div class="topic-card">
                 <div class="topic-header" style="background: #10b98115; border-left: 4px solid #10b981">
                     <span class="topic-icon">📋</span>
@@ -232,48 +239,30 @@
                 <div class="news-list">
                     
                     <div class="news-item">
-                        <h3 class="news-title">教育政策 今日热点 1</h3>
+                        <h3 class="news-title">
+                            <a href="http://paper.jyb.cn/zgjyb/h5/html5/2026-03/02/content_144741_19330607.htm" target="_blank">《全民阅读促进条例》正式施行，儿童阅读迈入法治化</a>
+                        </h3>
+                        <p class="news-summary">2026年2月起《条例》施行，要求政府制定少年儿童阅读计划、推广阶梯阅读，将婴幼儿早期阅读纳入优育奖补。</p>
                         <div class="news-meta">
-                            <span>教育部官网</span>
-                            <span>2小时前</span>
+                            <span>📰 中国教育报</span>
+                            <span>🕐 2026-03-02</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">教育政策 今日热点 2</h3>
+                        <h3 class="news-title">
+                            <a href="https://m.thepaper.cn/newsDetail_forward_32682909" target="_blank">专家建议建立中小学生阅读能力评估体系</a>
+                        </h3>
+                        <p class="news-summary">专家建议明确中小学图书馆藏书更新频率、生均藏书量等指标，建立资源均衡配置长效机制。</p>
                         <div class="news-meta">
-                            <span>中国教育报</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">教育政策 今日热点 3</h3>
-                        <div class="news-meta">
-                            <span>澎湃新闻教育</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">教育政策 今日热点 4</h3>
-                        <div class="news-meta">
-                            <span>教育部官网</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">教育政策 今日热点 5</h3>
-                        <div class="news-meta">
-                            <span>中国教育报</span>
-                            <span>2小时前</span>
+                            <span>📰 澎湃新闻</span>
+                            <span>🕐 2026-03-02</span>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            
+              
             <div class="topic-card">
                 <div class="topic-header" style="background: #f59e0b15; border-left: 4px solid #f59e0b">
                     <span class="topic-icon">📚</span>
@@ -282,53 +271,46 @@
                 <div class="news-list">
                     
                     <div class="news-item">
-                        <h3 class="news-title">阅读行业 今日热点 1</h3>
+                        <h3 class="news-title">
+                            <a href="http://book.newdu.com/m/view.php?aid=6637336" target="_blank">第30届北京国际图书博览会达成版权贸易2100余项</a>
+                        </h3>
+                        <p class="news-summary">6月19-23日图博会期间，71个国家和地区1600家参展单位洽商合作，少儿类居输出品类榜首。</p>
                         <div class="news-meta">
-                            <span>出版商务周报</span>
-                            <span>2小时前</span>
+                            <span>📰 文艺报/新都网</span>
+                            <span>🕐 2026-03-04</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">阅读行业 今日热点 2</h3>
+                        <h3 class="news-title">
+                            <a href="https://www.sxggwhy.com/news/detail?id=66b5e78236c816407080d9ff" target="_blank">临渭区图书馆组织开展绘声绘色大眼睛童书绘活动</a>
+                        </h3>
+                        <p class="news-summary">4月23日临渭区图书馆携手幼儿园举办绘本阅读嘉年华，通过亲子共读、情景剧表演等形式激发儿童阅读兴趣。</p>
                         <div class="news-meta">
-                            <span>中国出版传媒商报</span>
-                            <span>2小时前</span>
+                            <span>📰 陕西公共文化云</span>
+                            <span>🕐 2026-03-05</span>
                         </div>
                     </div>
                     
                     <div class="news-item">
-                        <h3 class="news-title">阅读行业 今日热点 3</h3>
+                        <h3 class="news-title">
+                            <a href="http://book.newdu.com/m/view.php?aid=6637336" target="_blank">儿童图画书创作100项目启动2024年征集</a>
+                        </h3>
+                        <p class="news-summary">新时代青年美术人才培养计划旨在推动中国原创儿童图画书创作质量提升，向儿童传递中国文化精髓。</p>
                         <div class="news-meta">
-                            <span>阅读公众号</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">阅读行业 今日热点 4</h3>
-                        <div class="news-meta">
-                            <span>出版商务周报</span>
-                            <span>2小时前</span>
-                        </div>
-                    </div>
-                    
-                    <div class="news-item">
-                        <h3 class="news-title">阅读行业 今日热点 5</h3>
-                        <div class="news-meta">
-                            <span>中国出版传媒商报</span>
-                            <span>2小时前</span>
+                            <span>📰 湖南出版投资控股集团</span>
+                            <span>🕐 2026-03-04</span>
                         </div>
                     </div>
                     
                 </div>
             </div>
-            
+              
         </div>
         
         <footer class="footer">
             <p>为您的关注主题提供每日精选资讯</p>
-            <div class="update-time">⏰ 每日早上8点更新</div>
+            <div class="update-time">⏰ 每天早上8点更新</div>
         </footer>
     </div>
 </body>
