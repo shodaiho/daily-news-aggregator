@@ -1,0 +1,44 @@
+name: Daily News Trigger
+
+on:
+  schedule:
+    # UTC 0:00 = 北京时间 8:00
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  trigger-openclaw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Trigger OpenClaw Agent
+        env:
+          OPENCLAW_URL: ${{ secrets.OPENCLAW_URL }}
+          SESSION_KEY: ${{ secrets.SESSION_KEY }}
+        run: |
+          echo "🚀 触发每日新闻聚合任务..."
+          
+          # 调用 OpenClaw API 触发大富
+          curl -X POST "${OPENCLAW_URL}/api/v1/sessions/${SESSION_KEY}/trigger" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "task": "daily_news_aggregate",
+              "topics": ["ai", "mid-east", "edu-policy", "reading"],
+              "action": "fetch_and_generate",
+              "deliver": true
+            }' \
+            --max-time 300
+          
+          echo "✅ 触发完成"
+      
+      - name: Wait for completion
+        run: |
+          echo "⏳ 等待任务执行完成（约5分钟）..."
+          sleep 300
+          
+      - name: Check website updated
+        run: |
+          echo "🔍 检查网页是否更新..."
+          curl -s https://shodaiho.github.io/daily-news-aggregator/ | head -5
